@@ -3,7 +3,7 @@ name: Run Tests
 on:
   push:
     branches:
-      - mytests  # замініть "main" на вашу основну гілку
+      - main  # замініть "main" на вашу основну гілку
 
 jobs:
   test:
