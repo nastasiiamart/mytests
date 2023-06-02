@@ -1,0 +1,25 @@
+name: Run Tests
+
+on:
+  push:
+    branches:
+      - mytests  # замініть "main" на вашу основну гілку
+
+jobs:
+  test:
+    runs-on: ubuntu-latest  # виберіть платформу, яка вам підходить
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Java
+      uses: actions/setup-java@v2
+      with:
+        java-version: '19.0.1' 
+
+    - name: Build with Gradle
+      run: ./gradlew build  
+
+    - name: Run tests
+      run: ./gradlew test  
